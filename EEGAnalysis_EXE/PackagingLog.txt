@@ -1,0 +1,25 @@
+ant:
+<ant>
+  <mkdir dir="F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\EEGAnalyzator\for_redistribution" />
+  <mkdir dir="F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\EEGAnalyzator\for_testing" />
+  <mkdir dir="F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\EEGAnalyzator\for_redistribution_files_only" />
+</ant>
+mcc -C -o EEGAnalyzator -W WinMain:EEGAnalyzator -T link:exe -d F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\EEGAnalyzator\for_testing -v F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\mainFigure.m -a F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\absolutePower1HzTesting.fig -a F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\absolutePower1HzTesting.m -a F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\coherenceTesting.fig -a F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\coherenceTesting.m -a F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\createFinalTable.m -a F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\createSubtables.m -a F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\createTable.m -a F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\elecsPos.m -a F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\exportTable.m -a F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\importAbsolutePower1Hz.m -a F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\importAbsolutePowerBands.m -a F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\importCoherence.m -a F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\mainFigure.m -a F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\statisticCoherence.m -a F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\statisticData.m 
+Compiler version: 6.0 (R2015a)
+Dependency analysis by REQUIREMENTS.
+[Warning: Adding path
+"F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats" to Compiler
+path instance.] 
+Parsing file "F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\mainFigure.m"
+	(Referenced from: "Compiler Command Line").
+Deleting 0 temporary MEX authorization files.
+Generating file "F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\EEGAnalyzator\for_testing\readme.txt".
+Packaging...
+Adding custom icon F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\EEGAnalyzator_resources\icon.ico to F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\EEGAnalyzator\for_testing\EEGAnalyzator.exe.
+Attempting to embed the CTF archive into the application F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\EEGAnalyzator\for_testing\EEGAnalyzator.exe.
+Finished embedding CTF archive. Deleting the external CTF archive.
+Creating the bundle...
+Web based installer created at F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\EEGAnalyzator\for_redistribution\MyAppInstaller_web.exe.
+Self contained installer created at F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\EEGAnalyzator\for_redistribution\MyAppInstaller_mcr.exe.
+Packaging complete.
+Elapsed packaging time was: 14 minutes and 18 seconds.

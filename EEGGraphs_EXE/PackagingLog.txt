@@ -1,0 +1,24 @@
+ant:
+<ant>
+  <mkdir dir="F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGGraphs\EEGGraphs\for_redistribution" />
+  <mkdir dir="F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGGraphs\EEGGraphs\for_testing" />
+  <mkdir dir="F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGGraphs\EEGGraphs\for_redistribution_files_only" />
+</ant>
+mcc -C -o EEGGraphs -W WinMain:EEGGraphs -T link:exe -d F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGGraphs\EEGGraphs\for_testing -v F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGGraphs\EEGGraphs.m -a F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGGraphs\EEGGraphs.m 
+Compiler version: 6.0 (R2015a)
+Dependency analysis by REQUIREMENTS.
+[Warning: Adding path "F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGGraphs"
+to Compiler path instance.] 
+Parsing file "F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGGraphs\EEGGraphs.m"
+	(Referenced from: "Compiler Command Line").
+Deleting 0 temporary MEX authorization files.
+Generating file "F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGGraphs\EEGGraphs\for_testing\readme.txt".
+Packaging...
+Adding custom icon F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGGraphs\EEGGraphs_resources\icon.ico to F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGGraphs\EEGGraphs\for_testing\EEGGraphs.exe.
+Attempting to embed the CTF archive into the application F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGGraphs\EEGGraphs\for_testing\EEGGraphs.exe.
+Finished embedding CTF archive. Deleting the external CTF archive.
+Creating the bundle...
+Web based installer created at F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGGraphs\EEGGraphs\for_redistribution\MyAppInstaller_web.exe.
+Self contained installer created at F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGGraphs\EEGGraphs\for_redistribution\MyAppInstaller_mcr.exe.
+Packaging complete.
+Elapsed packaging time was: 18 minutes and 45 seconds.
