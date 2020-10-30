@@ -1,5 +1,5 @@
 <deployment-project plugin="plugin.ezdeploy" plugin-version="1.0">
-  <configuration build-checksum="3362598048" file="F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\EEGAnalyzator.prj" location="F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats" name="EEGAnalyzator" preferred-package-location="F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\EEGAnalyzator\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
+  <configuration build-checksum="2977526639" file="W:\GIT\EEGGraphsEEGAnalysis\EEGAnalysis_MATLAB\EEGAnalyzator.prj" location="W:\GIT\EEGGraphsEEGAnalysis\EEGAnalysis_MATLAB" name="EEGAnalyzator" preferred-package-location="W:\GIT\EEGGraphsEEGAnalysis\EEGAnalysis_MATLAB\EEGAnalyzator\for_redistribution" preferred-package-type="package.type.exe" target="target.ezdeploy.standalone" target-name="Application Compiler">
     <param.appname>EEGAnalyzator</param.appname>
     <param.icon>${PROJECT_ROOT}\EEGAnalyzator_resources\icon.ico</param.icon>
     <param.icons>
@@ -16,26 +16,21 @@
     <param.description />
     <param.screenshot />
     <param.guid />
-    <param.net.saved.interface />
     <param.installpath.string>\NUDZ\EEGAnalyzator\</param.installpath.string>
     <param.installpath.combo>option.installpath.programfiles</param.installpath.combo>
     <param.logo />
     <param.install.notes />
+    <param.target.install.notes />
     <param.intermediate>${PROJECT_ROOT}\EEGAnalyzator\for_testing</param.intermediate>
     <param.files.only>${PROJECT_ROOT}\EEGAnalyzator\for_redistribution_files_only</param.files.only>
     <param.output>${PROJECT_ROOT}\EEGAnalyzator\for_redistribution</param.output>
+    <param.logdir>${PROJECT_ROOT}\EEGAnalyzator</param.logdir>
     <param.enable.clean.build>false</param.enable.clean.build>
     <param.user.defined.mcr.options />
-    <param.embed.ctf>true</param.embed.ctf>
     <param.target.type>subtarget.standalone</param.target.type>
     <param.support.packages />
-    <param.required.mcr.products>
-      <item>35000</item>
-      <item>35010</item>
-      <item>35001</item>
-    </param.required.mcr.products>
     <param.web.mcr>true</param.web.mcr>
-    <param.package.mcr>true</param.package.mcr>
+    <param.package.mcr>false</param.package.mcr>
     <param.no.mcr>false</param.no.mcr>
     <param.web.mcr.name>MyAppInstaller_web</param.web.mcr.name>
     <param.package.mcr.name>MyAppInstaller_mcr</param.package.mcr.name>
@@ -43,24 +38,35 @@
     <param.windows.command.prompt>true</param.windows.command.prompt>
     <param.create.log>false</param.create.log>
     <param.log.file />
+    <param.native.matlab>false</param.native.matlab>
+    <param.checkbox>false</param.checkbox>
+    <param.example />
+    <param.help.text>Syntax 
+	  -? 
+	 
+ Input Arguments 
+	 -?  print help on how to use the application 
+	 input arguments</param.help.text>
     <unset>
       <param.summary />
       <param.description />
       <param.screenshot />
       <param.guid />
-      <param.net.saved.interface />
       <param.installpath.string />
       <param.installpath.combo />
       <param.logo />
+      <param.install.notes />
+      <param.target.install.notes />
       <param.intermediate />
       <param.files.only />
       <param.output />
+      <param.logdir />
       <param.enable.clean.build />
       <param.user.defined.mcr.options />
-      <param.embed.ctf />
       <param.target.type />
       <param.support.packages />
       <param.web.mcr />
+      <param.package.mcr />
       <param.no.mcr />
       <param.web.mcr.name />
       <param.package.mcr.name />
@@ -68,6 +74,9 @@
       <param.windows.command.prompt />
       <param.create.log />
       <param.log.file />
+      <param.native.matlab />
+      <param.checkbox />
+      <param.example />
     </unset>
     <fileset.main>
       <file>${PROJECT_ROOT}\mainFigure.m</file>
@@ -93,29 +102,29 @@
       <file>F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGAnalyzator_navod.pdf</file>
       <file>${PROJECT_ROOT}\sablonaResult.xlsx</file>
     </fileset.package>
+    <fileset.depfun>
+      <file>${PROJECT_ROOT}\importdataBVA.m</file>
+    </fileset.depfun>
     <build-deliverables>
-      <file location="${PROJECT_ROOT}\EEGAnalyzator\for_testing" name="EEGAnalyzator.exe" optional="false">F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\EEGAnalyzator\for_testing\EEGAnalyzator.exe</file>
-      <file location="${PROJECT_ROOT}\EEGAnalyzator\for_testing" name="readme.txt" optional="true">F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\EEGAnalyzator\for_testing\readme.txt</file>
-      <file location="${PROJECT_ROOT}\EEGAnalyzator\for_testing" name="splash.png" optional="false">F:\NUDZ\Data\2016_04_EEG_Coherence_Tysl_Filip\EEGCoherence_rats\EEGAnalyzator\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\EEGAnalyzator\for_testing" name="splash.png" optional="false">W:\GIT\EEGGraphsEEGAnalysis\EEGAnalysis_MATLAB\EEGAnalyzator\for_testing\splash.png</file>
+      <file location="${PROJECT_ROOT}\EEGAnalyzator\for_testing" name="EEGAnalyzator.exe" optional="false">W:\GIT\EEGGraphsEEGAnalysis\EEGAnalysis_MATLAB\EEGAnalyzator\for_testing\EEGAnalyzator.exe</file>
+      <file location="${PROJECT_ROOT}\EEGAnalyzator\for_testing" name="readme.txt" optional="true">W:\GIT\EEGGraphsEEGAnalysis\EEGAnalysis_MATLAB\EEGAnalyzator\for_testing\readme.txt</file>
     </build-deliverables>
     <workflow />
     <matlab>
-      <root>C:\Program Files\MATLAB\MATLAB Production Server\R2015a</root>
+      <root>C:\Program Files\MATLAB\R2020b</root>
       <toolboxes>
-        <toolbox name="matlabhdlcoder" />
-        <toolbox name="fixedpoint" />
-        <toolbox name="embeddedcoder" />
         <toolbox name="matlabcoder" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="gpucoder" />
+        <toolbox name="fixedpoint" />
+        <toolbox name="matlabhdlcoder" />
+        <toolbox name="neuralnetwork" />
       </toolboxes>
       <toolbox>
-        <matlabhdlcoder>
+        <matlabcoder>
           <enabled>true</enabled>
-        </matlabhdlcoder>
-      </toolbox>
-      <toolbox>
-        <fixedpoint>
-          <enabled>true</enabled>
-        </fixedpoint>
+        </matlabcoder>
       </toolbox>
       <toolbox>
         <embeddedcoder>
@@ -123,9 +132,24 @@
         </embeddedcoder>
       </toolbox>
       <toolbox>
-        <matlabcoder>
+        <gpucoder>
           <enabled>true</enabled>
-        </matlabcoder>
+        </gpucoder>
+      </toolbox>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
+      </toolbox>
+      <toolbox>
+        <neuralnetwork>
+          <enabled>true</enabled>
+        </neuralnetwork>
       </toolbox>
     </matlab>
     <platform>
@@ -137,7 +161,7 @@
       <vista>false</vista>
       <linux>false</linux>
       <solaris>false</solaris>
-      <osver>6.2</osver>
+      <osver>6.3</osver>
       <os32>false</os32>
       <os64>true</os64>
       <arch>win64</arch>
