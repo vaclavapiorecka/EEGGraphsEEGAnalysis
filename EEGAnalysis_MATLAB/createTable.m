@@ -38,6 +38,15 @@ function [ data ] = createTable(FileName,FilePath,typeOfData)
             data.(name).electrodes = electrodeNames;
             data.(name).frequency = frequencyBands;
         end
-    
-    
+     case 'BVA1Hz'
+        for nof = 1 : 1 : numOfFiles
+            name = FileName{1,nof};
+            wholeFile = strcat(FilePath,name);
+        
+            [dataMatrix, frequencyBands, electrodeNames] = importdataBVA(wholeFile);
+            name = ['data' num2str(nof)];
+            data.(name).data = dataMatrix;
+            data.(name).electrodes = electrodeNames;
+            data.(name).frequency = frequencyBands;
+        end
 end

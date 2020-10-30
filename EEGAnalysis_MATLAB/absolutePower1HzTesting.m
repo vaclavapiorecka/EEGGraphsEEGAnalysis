@@ -22,7 +22,7 @@ function varargout = absolutePower1HzTesting(varargin)
 
 % Edit the above text to modify the response to help absolutePower1HzTesting
 
-% Last Modified by GUIDE v2.5 16-Jul-2016 21:38:24
+% Last Modified by GUIDE v2.5 30-Oct-2020 07:42:48
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -109,12 +109,12 @@ global FileName01 PathName01 data01
 try
     PathName01 = evalin('base','PathName01');  
     PathName01 = strcat(PathName01,'*.tdt');
-    [FileName01,PathName01,FilterIndex] = uigetfile(PathName01,'MultiSelect','on');
+    [FileName01,PathName01,~] = uigetfile(PathName01,'MultiSelect','on');
         assignin('base','FileName01',FileName01)
         assignin('base','PathName01',PathName01)
 catch
 
-        [FileName01,PathName01,FilterIndex] = uigetfile('*.tdt*','(*.tdt)','MultiSelect','on');
+        [FileName01,PathName01,~] = uigetfile('*.tdt*','(*.tdt)','MultiSelect','on');
         assignin('base','FileName01',FileName01)
         assignin('base','PathName01',PathName01)
 end
@@ -136,7 +136,7 @@ function createTable_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Ukl·d·nÌ soubor˘ (mÌsto a n·zev tabulky)
+% Ukl√°d√°n√≠ soubor≈Ø (m√≠sto a n√°zev tabulky)
 
 [fileNameOfResult,pathOfResult] = uiputfile('*.xlsx','Save Data As');
 savingPath = strcat(pathOfResult,fileNameOfResult);
@@ -147,7 +147,7 @@ sizeData = size(data01.data1.data,1);
 numOfMeasurment = size(data01,1);
 
 if sizeData ~= 12
-    errordlg('Soubor *.TDT byl vyexportov·n v jinÈm neû obvyklÈm form·tu. Zkontrolujte data. ','File Error')
+    errordlg('Soubor *.TDT byl vyexportov√°n v jin√©m ne≈æ obvykl√©m form√°tu. Zkontrolujte data. ','File Error')
 else
     
 data01 = statisticData(data01);
@@ -219,7 +219,7 @@ if numOfFiles==size(FileName02,2)
     data02 = createTable(FileName02,PathName02,'AbsolutePower1Hz');
     assignin('base','data02',data02)
 else
-    errordlg('Je nutnÈ, aby jednotlivÈ Ëasy mÏly stejn˝ poËet soubor˘!!!','File Error')
+    errordlg('Je nutn√©, aby jednotliv√© ƒçasy mƒõly stejn√Ω poƒçet soubor≈Ø!!!','File Error')
 end
 
 
@@ -268,7 +268,7 @@ if numOfFiles==size(FileName03,2)
     data03 = createTable(FileName03,PathName03,'AbsolutePower1Hz');
     assignin('base','data03',data03)
 else
-    errordlg('Je nutnÈ, aby jednotlivÈ Ëasy mÏly stejn˝ poËet soubor˘!!!','File Error')
+    errordlg('Je nutn√©, aby jednotliv√© ƒçasy mƒõly stejn√Ω poƒçet soubor≈Ø!!!','File Error')
 end
 
 
@@ -317,7 +317,7 @@ if numOfFiles==size(FileName04,2)
     data04 = createTable(FileName04,PathName04,'AbsolutePower1Hz');
     assignin('base','data04',data04)
 else
-    errordlg('Je nutnÈ, aby jednotlivÈ Ëasy mÏly stejn˝ poËet soubor˘!!!','File Error')
+    errordlg('Je nutn√©, aby jednotliv√© ƒçasy mƒõly stejn√Ω poƒçet soubor≈Ø!!!','File Error')
 end
 
 
@@ -357,7 +357,7 @@ end
 % assignin('base','namesOfCycles',namesOfCycles)
 % numOfCycles = size(namesOfCycles,1);
 % 
-% % ZapÌöe jmÈna jednotliv˝ch soubor˘ do tabulky
+% % Zap√≠≈°e jm√©na jednotliv√Ωch soubor≈Ø do tabulky
 % for i = 1 : 1 : 4
 %     helping = char(namesOfCycles(i));
 %     nameOfCycles{i} = helping;
@@ -454,9 +454,9 @@ data.(FileName).data04.dataSD  = xlsread(getPath,'80_90','C72:AZ83');
 
 
         dataSD = zeros(12,200);
-        data.(FileName).dataSD = dataSD;           % 56 = 4*14 (14 fr. p·sem, po 4 Ëasech)
+        data.(FileName).dataSD = dataSD;           % 56 = 4*14 (14 fr. p√°sem, po 4 ƒçasech)
         dataMEAN = zeros(12,200);
-        data.(FileName).dataMEAN = dataMEAN;       % 56 = 4*14 (14 fr. p·sem, po 4 Ëasech)
+        data.(FileName).dataMEAN = dataMEAN;       % 56 = 4*14 (14 fr. p√°sem, po 4 ƒçasech)
         
         for numOfElecs = 1 : 1 : 12
             for numOfFreq = 1 : 1 : 50
@@ -480,7 +480,7 @@ set(handles.listbox5,'String',names)
 
 % --- Executes on button press in finalTableRD.
 function finalTableRD_Callback(hObject, eventdata, handles)
-% Export surov˝ch dat mimo öablonu.
+% Export surov√Ωch dat mimo ≈°ablonu.
 
 global data
 
@@ -492,14 +492,14 @@ numOfTimes = 4;
 
 namesOfTimes = {'baseline', '20-30 min.', '50-60 min.', '80-90 min.' };   
 
-% ZapÌöe jmÈna jednotliv˝ch soubor˘ do tabulky
+% Zap√≠≈°e jm√©na jednotliv√Ωch soubor≈Ø do tabulky
 for i = 1 : 1 : numOfCycles
     helping = char(namesOfCycles(i));
     nameOfCycles{i} = helping;
 end
 
-sizeOfData = size(data.(helping).dataSD,1);                                                            % PoËet elektrodov˝ch p·r˘ pro anal˝zu
-statisticParams = {'Pr˘mÏr';'SD'};
+sizeOfData = size(data.(helping).dataSD,1);                                                            % Poƒçet elektrodov√Ωch p√°r≈Ø pro anal√Ωzu
+statisticParams = {'Pr≈Ømƒõr';'SD'};
 namesOfElecs = {'F4-LE';'C4-LE';'P4-LE';'P6-LE';'T4-LE';'T6-LE';'F3-LE';'C3-LE';'P3-LE';'P5-LE';'T3-LE';'T5-LE'};
 namesOfBands = {'1 Hz' '2 Hz' '3 Hz' '4 Hz' '5 Hz' '6 Hz' '7 Hz' '8 Hz' '9 Hz' '10 Hz' '11 Hz' '12 Hz' '13 Hz' '14 Hz' '15 Hz' '16 Hz' '17 Hz' '18 Hz' '19 Hz' '20 Hz' '21 Hz' '22 Hz' '23 Hz' '24 Hz' '25 Hz' '26 Hz' '27 Hz' '28 Hz' '29 Hz' '30 Hz' '31 Hz' '32 Hz' '33 Hz' '34 Hz' '35 Hz' '36 Hz' '37 Hz' '38 Hz' '39 Hz' '40 Hz' '41 Hz' '42 Hz' '43 Hz' '44 Hz' '45 Hz' '46 Hz' '47 Hz' '48 Hz' '49 Hz' '50 Hz'};
 helpNames = [namesOfCycles; namesOfCycles]';
@@ -507,7 +507,7 @@ helpNames = [namesOfCycles; namesOfCycles]';
 nameToTableE = cell(2*numOfCycles*sizeOfData,1);
 nameToTableS = cell(2*numOfCycles*sizeOfData,1);
 
-for noe = 1 : 1 : sizeOfData                                                        % Pouze 36 vybran˝ch p·r˘ do tabulky. Dva vybranÈ statistickÈ parametry: pr˘mÏr, smÏr. odchylka.
+for noe = 1 : 1 : sizeOfData                                                        % Pouze 36 vybran√Ωch p√°r≈Ø do tabulky. Dva vybran√© statistick√© parametry: pr≈Ømƒõr, smƒõr. odchylka.
     nameToTableE(2*numOfCycles*(noe-1)+1) = namesOfElecs(noe);
     nameToTableF((2*numOfCycles*(noe-1)+1):(2*numOfCycles*(noe-1)+numOfCycles*2),1) = helpNames;                 
     nameToTableS((2*numOfCycles*(noe-1)+1)) = statisticParams(1,:); 
@@ -515,7 +515,7 @@ for noe = 1 : 1 : sizeOfData                                                    
 end
 
 columnData1 = cell(numOfTimes*50,2);
-for nof = 1 : 1 : 50                % Celkem 14 frekvenËnÌch p·sem po 4 Ëasech.
+for nof = 1 : 1 : 50                % Celkem 14 frekvenƒçn√≠ch p√°sem po 4 ƒçasech.
     columnData1((numOfTimes*(nof-1)+1),:) = namesOfBands(1,nof)';
     columnData2((numOfTimes*(nof-1)+1):(numOfTimes*(nof-1)+numOfTimes)) = namesOfTimes;
 end
@@ -545,17 +545,17 @@ wholeNameRes = strcat(pathOfRes,fileNameRes);
 
     assignin('base','table',tableToCompare)
     
-% Z·pis dat - jmÈna ¯·dk˘
+% Z√°pis dat - jm√©na ≈ô√°dk≈Ø
 sheet = 1;
 xlRange = 'A4';
 xlswrite(wholeNameRes,nameToTable,sheet,xlRange)
 
-% Z·pis dat - jmÈna sloupc˘
+% Z√°pis dat - jm√©na sloupc≈Ø
 sheet = 1;
 xlRange = 'D1';
 xlswrite(wholeNameRes,columnData,sheet,xlRange)
 
-% Z·pis dat - jmÈna sloupc˘
+% Z√°pis dat - jm√©na sloupc≈Ø
 sheet = 1;
 xlRange = 'D4';
 xlswrite(wholeNameRes,tableToCompare,sheet,xlRange)
@@ -569,8 +569,8 @@ function createStatisticData_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 
-% Vytvo¯enÌ souboru s p˘vodnÌmi hodnotami. UrËenÈ pro statistickÈ
-% zhodnocenÌ.
+% Vytvo≈ôen√≠ souboru s p≈Øvodn√≠mi hodnotami. Urƒçen√© pro statistick√©
+% zhodnocen√≠.
 [fileNameOfResult,pathOfResult] = uiputfile('*.xlsx','Save Statistic Data As');
 savingPath = strcat(pathOfResult,fileNameOfResult);
 
@@ -578,19 +578,19 @@ savingPath = strcat(pathOfResult,fileNameOfResult);
 
 global data01 data02 data03 data04 statdata FileName01 FileName02 FileName03 FileName04
 
-sizeData = size(data01.data1.data,1);
+numOfElecs = size(data01.data1.data,1);
 names = fieldnames(data01);
 numOfMeasurment = size(names,1);
 
 frequencyBandsHelp = data01.data1.frequency;
-numOfFrequency = size(frequencyBandsHelp,2);
+numOfFrequency = size(frequencyBandsHelp,2);      
 namesOfTimes = {'baseline'; '20-30 min.'; '50-60 min.'; '80-90 min.' };
 namesOfElecs = data01.data1.electrodes;
 
 %namesOfElecs = cell(sizeData,1);
 
-if sizeData ~= 12
-    errordlg('Soubor *.TDT byl vyexportov·n v jinÈm neû obvyklÈm form·tu. Zkontrolujte data. ','File Error')
+if numOfElecs ~= 12
+    errordlg('Soubor byl vyexportov√°n v jin√©m ne≈æ obvykl√©m form√°tu. Zkontrolujte data. ','File Error')
 else
     
     data01 = statisticData(data01);
@@ -605,8 +605,8 @@ else
     data04 = statisticData(data04);
     assignin('base','data04',data04)
     
-    % alokoce promÏnn˝ch
-    finalStatData = zeros(numOfMeasurment,4*numOfMeasurment,sizeData);
+    % alokoce promƒõnn√Ωch
+    finalStatData = zeros(numOfMeasurment,4*numOfFrequency,numOfElecs);
     finalNames = cell(1,4*numOfFrequency);
     nameOfTreatment = cell(4*numOfMeasurment,1);
     
@@ -619,7 +619,7 @@ else
         frequencyBands(:,((not-1)*numOfFrequency+1):(not*numOfFrequency)) = frequencyBandsHelp(:,:);
     end
     
-    for noe = 1 : 1 : sizeData
+    for noe = 1 : 1 : numOfElecs
         helpData(:,:,1) = data01.statData(:,:,noe);
         helpData(:,:,2) = data02.statData(:,:,noe);
         helpData(:,:,3) = data03.statData(:,:,noe);
@@ -657,7 +657,7 @@ else
     names = fieldnames(statdata);
     set(handles.namesOfDataStat,'String',names)
 
-    for noe = 1 : 1 : sizeData
+    for noe = 1 : 1 : numOfElecs
         sheet = char(namesOfElecs{noe});
         xlRange = 'B1';
         xlswrite(savingPath,finalNames,sheet,xlRange)
@@ -674,7 +674,7 @@ else
     end
     
     
-    % Ukl·d· .mat soubor do stejnÈ sloûky pro jednu medikaci ve Ëty¯ech Ëasech
+    % Ukl√°d√° .mat soubor do stejn√© slo≈æky pro jednu medikaci ve ƒçty≈ôech ƒçasech
     
     helpNameOfResult = char(fileNameOfResult);
     fileNameOfResult = statdata.(fileNameOfResult);
@@ -721,7 +721,7 @@ numOfFreq = size(frequencyBands,2);
 namesOfElecs = statdata.(helpName).namesOfElecs;
 
 numOfMeasurment = zeros(numOfCycles,1);
-% PoËet jednotliv˝ch mÏ¯enÌch ve skupin·ch
+% Poƒçet jednotliv√Ωch mƒõ≈ôen√≠ch ve skupin√°ch
 for noc = 1 : 1 : numOfCycles
     helpName = char(namesOfCycles(noc));
     numOfMeasurment(noc) = size(statdata.(helpName).data,1);
@@ -729,7 +729,7 @@ end
 
 sum(numOfMeasurment,1)
 finalStatData = zeros(sum(numOfMeasurment,1),numOfFreq,sizeData);
-% ZapÌöe jmÈna jednotliv˝ch soubor˘ do tabulky
+% Zap√≠≈°e jm√©na jednotliv√Ωch soubor≈Ø do tabulky
 for noc = 1 : 1 : numOfCycles
     helpName = char(namesOfCycles(noc));
     if noc==1
@@ -860,3 +860,104 @@ set(handles.filesNames03, 'String', '');
 set(handles.filesNames04, 'String', '');
 set(handles.listbox5,'String','');
 set(handles.namesOfDataStat,'String','');
+
+
+% --- Executes on button press in importBVA01.
+function importBVA01_Callback(hObject, eventdata, handles)
+% hObject    handle to importBVA01 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+global FileName01 PathName01 data01
+
+try
+    PathName01 = evalin('base','PathName01');  
+    PathName01 = strcat(PathName01,'*.dat');
+    [FileName01,PathName01,~] = uigetfile(PathName01,'MultiSelect','on');
+        assignin('base','FileName01',FileName01)
+        assignin('base','PathName01',PathName01)
+catch
+
+        [FileName01,PathName01,~] = uigetfile('*.tdt*','(*.dat)','MultiSelect','on');
+        assignin('base','FileName01',FileName01)
+        assignin('base','PathName01',PathName01)
+end
+
+
+set(handles.filesNames01,'String',FileName01);
+
+data01 = createTable(FileName01,PathName01,'BVA1Hz');       
+assignin('base','data01',data01)
+
+global numOfFiles
+numOfFiles = size(fieldnames(data01),1);
+assignin('base','numOfFiles',numOfFiles)
+
+
+
+% --- Executes on button press in importBVA02.
+function importBVA02_Callback(hObject, eventdata, handles)
+% hObject    handle to importBVA02 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+global FileName02 PathName02 data02 numOfFiles
+PathName01 = evalin('base','PathName01');
+PathName01 = strcat(PathName01,'*.dat');
+
+[FileName02,PathName02,~] = uigetfile(PathName01,'MultiSelect','on');
+assignin('base','FileName02',FileName02)
+
+set(handles.filesNames02,'String',FileName02);
+
+numOfFiles = evalin('base','numOfFiles');
+if numOfFiles==size(FileName02,2)
+    data02 = createTable(FileName02,PathName02,'BVA1Hz');
+    assignin('base','data02',data02)
+else
+    errordlg('Je nutn√©, aby jednotliv√© ƒçasy mƒõly stejn√Ω poƒçet soubor≈Ø!!!','File Error')
+end
+
+
+% --- Executes on button press in importBVA03.
+function importBVA03_Callback(hObject, eventdata, handles)
+% hObject    handle to importBVA03 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+global FileName03 PathName03 data03 numOfFiles
+PathName01 = evalin('base','PathName01');
+PathName01 = strcat(PathName01,'*.dat');
+
+[FileName03,PathName03,~] = uigetfile(PathName01,'MultiSelect','on');
+assignin('base','FileName03',FileName03)
+
+set(handles.filesNames03,'String',FileName03);
+
+numOfFiles = evalin('base','numOfFiles');
+if numOfFiles==size(FileName03,2)
+    data03 = createTable(FileName03,PathName03,'BVA1Hz');
+    assignin('base','data03',data03)
+else
+    errordlg('Je nutn√©, aby jednotliv√© ƒçasy mƒõly stejn√Ω poƒçet soubor≈Ø!!!','File Error')
+end
+
+% --- Executes on button press in importBVA04.
+function importBVA04_Callback(hObject, eventdata, handles)
+% hObject    handle to importBVA04 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+global FileName04 PathName04 data04 numOfFiles
+PathName01 = evalin('base','PathName01');
+PathName01 = strcat(PathName01,'*.dat');
+
+[FileName04,PathName04,~] = uigetfile(PathName01,'MultiSelect','on');
+assignin('base','FileName04',FileName04)
+
+set(handles.filesNames04,'String',FileName04);
+
+numOfFiles = evalin('base','numOfFiles');
+if numOfFiles==size(FileName04,2)
+    data04 = createTable(FileName04,PathName04,'BVA1Hz');
+    assignin('base','data04',data04)
+else
+    errordlg('Je nutn√©, aby jednotliv√© ƒçasy mƒõly stejn√Ω poƒçet soubor≈Ø!!!','File Error')
+end
