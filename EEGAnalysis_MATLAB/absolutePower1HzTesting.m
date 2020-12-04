@@ -878,7 +878,7 @@ try
         assignin('base','PathName01',PathName01)
 catch
 
-        [FileName01,PathName01,~] = uigetfile('*.tdt*','(*.dat)','MultiSelect','on');
+        [FileName01,PathName01,~] = uigetfile('*.dat*','(*.dat)','MultiSelect','on');
         assignin('base','FileName01',FileName01)
         assignin('base','PathName01',PathName01)
 end
